@@ -23,10 +23,10 @@
 ;;; Commentary:
 
 ;; This package is an integration and generalization of `smartchr.el'
-;; and `sequencial-command.el', allows one to use multiple commands on
+;; and `sequential-command.el', allows one to use multiple commands on
 ;; one key like "C-l" in Emacs default.  `smartchr.el' provides
 ;; different insertion for pressing one key multiple times, and
-;; `sequencial-command.el' does different commands without buffer and
+;; `sequential-command.el' does different commands without buffer and
 ;; point recovered.  They are essentially the same so this package
 ;; provides that.
 ;;

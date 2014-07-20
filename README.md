@@ -1,12 +1,12 @@
 # command-chain.el
 
 This package is an integration and generalization of `smartchr.el`
-and `sequencial-command.el`, allows one to use multiple commands on
+and `sequential-command.el`, allows one to use multiple commands on
 one key like `C-l` in Emacs default.
 
-`smartchr.el`, porting of `smartchr` on vim, provides different insertion
+`smartchr.el`, porting of `smartchr` on vim, provides different insertions
 for pressing one key multiple times.
-`sequencial-command.el` execute different commands with buffer and
+`sequential-command.el` execute different commands with buffer and
 point unchanged.
 They are essentially the same so this package provides that.
 
@@ -16,7 +16,7 @@ They are essentially the same so this package provides that.
 
 - There was no feature like `:loop`.
 - There was no feature like `:prefix-fallback` in `smartchr.el`.
-- Point movement of `sequencial-command.el` is not preferable for me.
+- Point movement of `sequential-command.el` is not preferable for me.
   Alternatively we can write same feature by using list of functions and it's easy to control.
 
 
