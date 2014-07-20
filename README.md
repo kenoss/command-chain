@@ -12,6 +12,15 @@ They are essentially the same so this package provides that.
 
 
 
+## What is the differnt (except for integration)?
+
+- There was no feature like `:loop`.
+- There was no feature like `:prefix-fallback` in `smartchr.el`.
+- Point movement of `sequencial-command.el` is not preferable for me.
+  Alternatively we can write same feature by using list of functions and it's easy to control.
+
+
+
 ## Requirement
 
 ERFI (`erfi-macros.el`, `erfi-srfi-1.el`)
