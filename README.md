@@ -4,10 +4,10 @@ This package is an integration and generalization of `smartchr.el`
 and `sequencial-command.el`, allows one to use multiple commands on
 one key like `C-l` in Emacs default.
 
-`smartchr.el`, porting of smartchr in vim, provides different insertion
+`smartchr.el`, porting of `smartchr` on vim, provides different insertion
 for pressing one key multiple times.
-`sequencial-command.el` does different commands without buffer and
-point recovered.
+`sequencial-command.el` execute different commands with buffer and
+point unchanged.
 They are essentially the same so this package provides that.
 
 
@@ -56,6 +56,15 @@ Or download zip file and extract.  Write the below to your .emacs file:
 ## Examples
 
 `command-chain` takes a list of items and return interactive function.
+Items must be the following forms:
+
+  - Keyword `:loop`
+  - Struct `command-chain-fnpair`
+  - String
+  - Pair of strings `(str1 . str2)`
+  - Function
+  - List of the above things
+
 For string, returned function insert it.  Command sequence ends as list ends.
 As the command sequence proceed, inserted text are deleted and point are recovered.
 
@@ -74,7 +83,7 @@ effect:
 
 ### Keyword `:loop`
 
-Key word `:loop` indicates following items constitute a loop.
+Key word `:loop` indicates following items of this keyword constitute a loop.
 
 config:
 
@@ -235,7 +244,7 @@ effect:
 	;;;;;  =>  AAA
 
 
-Like `C-l`, one may want `C-w` do `kill-region` and do nothing modulo 2, and `kill-ring-save` with prefix `C-u`:
+Like `C-l`, one may want `C-w` to do `kill-region` and do nothing modulo 2, and `kill-ring-save` with prefix `C-u`:
 
 	(define-key global-map (kbd "C-w")
 	  (command-chain '((:insert-fn (lambda () (interactive)
@@ -244,7 +253,7 @@ Like `C-l`, one may want `C-w` do `kill-region` and do nothing modulo 2, and `ki
 	                    :cleanup-fn undo))
 	                 :prefix-fallback 'kill-ring-save))
 
-The above register region to kill-ring as one repeats.  The right definition is the following:
+The above register region to kill-ring as much as one repeats.  The right definition is the following:
 
 	(define-key global-map (kbd "C-w")
 	  (command-chain '((:insert-fn (lambda () (interactive)

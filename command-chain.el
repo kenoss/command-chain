@@ -142,7 +142,7 @@ different functions as specified by SPEC.
 SPEC must be a list of the following form:
 
   Keyword :loop
-    This designate following items of it constitute a loop.
+    This designate following items of this keyword constitute a loop.
     This may occur at most once.
 
   Struct `command-chain-fnpair'
@@ -161,7 +161,7 @@ SPEC must be a list of the following form:
   Pair of strings (str1 . str2)
     Same to the above but string = str1 + \"cursor\" + str2 .
 
-  Interative function
+  Function
     Call it.  No clean up.  (Point will be recovered as usual.)
 
   List of the above things
