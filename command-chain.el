@@ -47,8 +47,7 @@
 
 
 (defgroup command-chain nil
-  "command-chain group"
-  :group 'command-chain)
+  "`command-chain' group")
 
 (defcustom command-chain-cursor-regexp "_|_"
   "Designator for point moved after insertion."
@@ -59,8 +58,8 @@
 ;; Internal variable, but modification allowed to control point.
 (defvar *command-chain-command-start-position* nil
   "Functions created by `command-chain' will set this variable to point
-for each time command sequence starts.  For each time clean up previous command,
-restore point to this variable unless it is nil.
+for each time a command sequence starts.  For each time clean up previous command,
+restore point to this value unless it is nil.
 
 To set nil to this variable, use `command-chain-turn-off-point-recovery'.")
 
@@ -73,11 +72,11 @@ To set nil to this variable, use `command-chain-turn-off-point-recovery'.")
 (defstruct command-chain-fnpair insert-fn cleanup-fn)
 ;;   insert-fn  :: nothing -> val
 ;;   cleanup-fn :: val -> nothing
-;; Typically, val is list (start end) representing inserted region.
+;; Typically, val is a list (start end) representing inserted region.
 ;; In the most case, buffer contents after calling composite of them should be equal to
 ;; the original one.
-;; Point may differ the original one.  `command-chain' recover it aautomatically.
-;; If one want to move point, use the variable `*command-chain-command-start-position*'.
+;; Point may differ the original one.  `command-chain' recover it automatically.
+;; If one wants to move point, use the variable `*command-chain-command-start-position*'.
 
 
 
@@ -165,7 +164,7 @@ SPEC must be a list of the following form:
     Call it.  No clean up.  (Point will be recovered as usual.)
 
   List of the above things
-    Call sequentially :insert-fn of it and clean up by calling
+    Call sequentially :insert-fn of them and clean up by calling
     :cleanup-fn in reverse order.
 
 
