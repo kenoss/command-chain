@@ -257,7 +257,8 @@ effect:
 	;;;;;  =>  AAA
 
 
-Like `C-l`, one may want `C-w` to do `kill-region` and do nothing modulo 2, and `kill-ring-save` with prefix `C-u`:
+Like `C-l`, one may want `C-w` to do `kill-region` and do nothing modulo 2, and `kill-ring-save` with prefix `C-u`.
+Simple version:
 
 	(define-key global-map (kbd "C-w")
 	  (command-chain '((:insert-fn (lambda () (interactive)
