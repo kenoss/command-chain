@@ -4,7 +4,7 @@ This package is an integration and generalization of `smartchr.el`
 and `sequential-command.el`, allows one to use multiple commands on
 one key like `C-l` in Emacs default.
 
-`smartchr.el`, porting of `smartchr` on vim, provides different insertions
+`smartchr.el`, a porting of `smartchr` on vim, provides different insertions
 for pressing one key multiple times.
 `sequential-command.el` execute different commands with buffer and
 point unchanged.
@@ -12,7 +12,7 @@ They are essentially the same so this package provides that.
 
 
 
-## What is the differnt (except for integration)?
+## What is the different (except for integration)?
 
 - There was no feature like `:loop`.
 - There was no feature like `:prefix-fallback` in `smartchr.el`.
@@ -122,17 +122,19 @@ Key word `:loop` may appear at most once.
 
 invalid config:
 
-	(define-key global-map (kbd ";") (command-chain '("a" :loop "b" "c" :loop a)))
+	(define-key global-map (kbd ";")
+	  (command-chain '("a" :loop "b" "c" :loop a)))
 
 
 ### String
 
-The variable `command-chain-cursor-regexp` in string indicate where point should move after insertion.
-Default is "\_|\_".  One can use pairs alternatively.
+The value of variable `command-chain-cursor-regexp` in string indicate where point should move
+after insertion.  Default is "\_|\_".  One can use pairs alternatively.
 
 config:
 
-	(define-key global-map (kbd ";") (command-chain '("a" "b_|_b" ("c" . "c"))))
+	(define-key global-map (kbd ";")
+	  (command-chain '("a" "b_|_b" ("c" . "c"))))
 
 effect:
 
@@ -211,7 +213,8 @@ The above examples are expanded to this form.  One can use this for full control
 
 config:
 
-	(define-key global-map (kbd ";") (command-chain '("a" "b" "c") :prefix-fallback ";"))
+	(define-key global-map (kbd ";")
+	  (command-chain '("a" "b" "c") :prefix-fallback ";"))
 
 effect:
 
@@ -220,7 +223,8 @@ effect:
 
 config:
 
-	(define-key global-map (kbd ";") (command-chain '("a" "b" "c") :prefix-fallback 'self-insert-command))
+	(define-key global-map (kbd ";")
+	  (command-chain '("a" "b" "c") :prefix-fallback 'self-insert-command))
 
 effect:
 
