@@ -3,7 +3,7 @@
 ;; Copyright (C) 2014  Ken Okada
 
 ;; Author: Ken Okada <keno.ss57@gmail.com>
-;; Keywords: convenience
+;; Keywords: abbrev, convenience
 ;; URL: https://github.com/kenoss/command-chain
 ;; Package-Requires: ((emacs "24"))
 
